@@ -1,6 +1,10 @@
 # Ember-fr-markdown-file
 
-This README outlines the details of collaborating on this Ember addon.
+Imports md files located in <project>/markdown.  File contents can be accessed using the helper `{{fr-markdown-file 'path/in/markdown/dir'}}`.  This is primarily useful as a way to keep markdown in separate files when using markdown components such as ember-cli-showdown[https://github.com/gcollazo/ember-cli-showdown].
+
+## Example usage
+
+{{markdown-to-html markdown=(fr-markdown-file 'test')}}
 
 ## Installation
 
