@@ -8,9 +8,7 @@ Imports md files located in <project>/markdown.  File contents can be accessed u
 
 ## Installation
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+* `ember install ember-fr-markdown-file`
 
 ## Running
 
