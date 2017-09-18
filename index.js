@@ -14,13 +14,18 @@ module.exports = {
 
   included: function (app) {
     this._super.included(app);
+    let addonOptions = (this.parent && this.parent.options) ||
+                       (this.app && this.app.options);
+    let config = addonOptions[this.name] || {};
+    this.markdownRoot = path.resolve(this.project.root, config.markdownRoot) ||
+                        path.join(this.project.root, 'markdown'); // original default
   },
 
   treeForAddon: function (tree) {
     var mdPaths = [];
 
     if (this.project.name() !== 'ember-fr-markdown-file') {
-      var appMdRoot = path.join(this.project.root, 'markdown');
+      var appMdRoot = this.markdownRoot;
       if (fs.existsSync(appMdRoot)) {
         mdPaths.push(appMdRoot);
       }
